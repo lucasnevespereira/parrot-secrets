@@ -201,6 +201,9 @@ form {
 }
 
 @media (min-width: 992px) {
+  .logo {
+    width: 20%;
+  }
   .container-secrets {
     width: 70%;
   }
@@ -217,6 +220,7 @@ form {
   }
   .card {
     font-size: var(--medium);
+    margin: 20px;
   }
 
   h3 {
