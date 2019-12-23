@@ -88,7 +88,8 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: "http://localhost:3000/auth/facebook/secrets",
+      callbackURL:
+        "http://http://parrotsecrets.herokuapp.com/auth/facebook/secrets",
       profileFields: [
         "id",
         "displayName",
