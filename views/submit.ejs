@@ -4,8 +4,35 @@
   <div class="short-logo">
     <img src="img/simple-logo.png" alt="logo" />
   </div>
-  <div class="btn btn-outline-danger my-2 my-sm-0">
-    <a class="text-danger text-decoration-none" href="/logout">Logout</a>
+  <% if(isAuth){ %>
+  <div class="menu">
+    <div class="label-menu">
+      <div class="label-menu-items">
+        <a href="/">
+          Home
+        </a>
+      </div>
+      <div class="label-menu-items">
+        <a href="/submit">
+          Submit a secret
+        </a>
+      </div>
+      <div class="label-menu-items">
+        <a href="/user">
+          My Account
+        </a>
+      </div>
+    </div>
+    <div class="btn btn-outline-danger my-2 my-sm-0 log-btn">
+      <a class="text-danger text-decoration-none" href="/logout">Logout</a>
+    </div>
+    <%} else {%>
+    <div class="btn btn-primary my-2 my-sm-0">
+      <a class="text-light text-decoration-none btn-sm log-btn" href="/login"
+        >Login</a
+      >
+    </div>
+    <%}%>
   </div>
 </div>
 <div class="separator"></div>
