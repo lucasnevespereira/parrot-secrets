@@ -38,10 +38,10 @@
     <div class="row">
       <% if(showMySecrets.length != 0){%>
       <% showMySecrets.forEach(secret => { %>
-      <div class="col-md-8 col-lg-10 mx-auto">
+      <div class="col-md-8 col-lg-6 mx-auto">
         <div class="card my-card">
           <p><%=secret.content%></p>
-          <a href="/delete/<%= secret._id%>">
+          <a href="javascript:if(confirm('Are you sure you want to delete your secret ?')){document.location.href='/delete/<%=secret._id%>';}">
             <i class="far fa-trash-alt"></i>
           </a>
         </div>
