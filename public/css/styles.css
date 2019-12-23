@@ -94,6 +94,10 @@ form {
   text-align: center;
 }
 
+.secrets-title {
+  margin-bottom: 20px;
+}
+
 .card {
   position: unset;
   border-radius: 4px;
