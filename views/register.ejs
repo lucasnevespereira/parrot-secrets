@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+
+<div class="logo">
+  <img src="img/parrot_Secrets.png" alt="logo" />
+</div>
+<div class="container-fluid col-md-6">
+  <form action="/register" method="POST">
+    <div class="form-group">
+    <div class="form-group">
+      <input type="text" class="form-control" name="username" placeholder="Enter a Username"/>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="Enter a Password" />
+    </div>
+    <div class="form-btn">
+    <button type="submit" class="button-wide btn btn-dark btn-wide">Signup</button>
+      <a
+        class="btn btn-block btn-social btn-facebook text-center"
+        href="/auth/facebook"
+        role="button"
+      >
+        <i class="fab fa-facebook"></i>
+        Signup with Facebook
+      </a>
+    </div>
+    <div class="link-btn text-center mt-2">
+      <a class="btn btn-link" href="/login">
+        Already have an account? Log In
+      </a>
+    </div>
+
+    <% if(error != "") { %>
+    <div class="alert alert-danger mt-3 text-center" role="alert">
+      <%= error %>
+    </div>
+    <% } %>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

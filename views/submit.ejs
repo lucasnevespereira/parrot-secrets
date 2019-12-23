@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<div class="header">
+  <div class="short-logo">
+    <img src="img/simple-logo.png" alt="logo" />
+  </div>
+  <div class="btn btn-outline-danger my-2 my-sm-0">
+    <a class="text-danger text-decoration-none" href="/logout">Logout</a>
+  </div>
+</div>
+<div class="separator"></div>
+
+  <div class="submit-secrets">
+    <h3>Submit Secrets</h3>
+
+
+    <form action="/submit" method="POST" class="container-fluid col-lg-6">
+
+        <div class="form-group mt-5">
+          <!-- <input type="text" class="form-control text-center" name="secret" placeholder="What's your secret <%=user%> ?"> -->
+          <textarea name="secret" class="form-control text-center" placeholder="What's your secret <%=user%> ?"cols="30" rows="5"></textarea>
+        </div>
+        <button type="submit" class=" button-wide btn btn-dark">Share it to the Parrots Wall</button>
+      </form>
+  
+  </div>
+
+
+
+
+
+  <div class="menu-tab">
+    <div class="menu-tab-items">
+      <a href="/user">
+      <i class="far fa-user"></i>
+    </a>
+    </div>
+    <div class="menu-tab-items">
+      <a href="/">
+      <i class="fas fa-home"></i>
+    </a>
+    </div>
+    <div class="menu-tab-items">
+      <a href="/submit">
+      <i class="far fa-edit"></i>
+    </a>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</div>

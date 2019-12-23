@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<div class="logo">
+  <img src="img/parrot_Secrets.png" alt="" />
+</div>
+<div class="container-fluid col-md-6 col-lg-4">
+  <form action="/login" method="POST">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        placeholder="Username"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="form-btn">
+      <button type="submit" class="btn btn-dark btn-wide">Login</button>
+      <a
+        class="btn btn-block btn-social btn-facebook text-center"
+        href="/auth/facebook"
+        role="button"
+      >
+        <i class="fab fa-facebook"></i>
+        Login with Facebook
+      </a>
+    </div>
+    <div class="link-btn mt-2 text-center">
+      <a class="btn btn-link" href="/register">
+        Don't have an account yet? Sign Up
+      </a>
+    </div>
+    <% if(isErr) { %>
+    <div class="alert alert-danger mt-3 text-center" role="alert">
+      An error ocurred. Please try again!
+    </div>
+    <% } %>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

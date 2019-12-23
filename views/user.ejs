@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+
+<div class="header">
+  <div class="short-logo">
+    <img src="img/simple-logo.png" alt="logo" />
+  </div>
+  <div class="btn btn-outline-danger my-2 my-sm-0">
+    <a class="text-danger text-decoration-none" href="/logout">Logout</a>
+  </div>
+</div>
+<div class="separator"></div>
+
+<div class="user-secrets">
+  <h3><%=user%>'s Secrets</h3>
+
+  <hr />
+
+  <div class="mysecrets">
+    <div class="row">
+      <% if(showMySecrets.length != 0){%>
+      <% showMySecrets.forEach(secret => { %>
+      <div class="col-md-8 col-lg-10 mx-auto">
+        <div class="card my-card">
+          <p><%=secret.content%></p>
+          <a href="/delete/<%= secret._id%>">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </div>
+      </div>
+        <%}); } else { %>
+          <p class="mx-auto">You have no secrets yet</p>
+          <% };%>
+    </div>
+  </div>
+
+      <hr />
+
+      <div class="btn button-wide btn-danger my-2 ">
+        <a
+          class="text-light text-decoration-none"
+          href="javascript:if(confirm('Are you sure you want to delete your account ?')){document.location.href='/user/<%=userId%>';}"
+          >Delete My Account</a
+        >
+      </div>
+    </div>
+
+    <div class="menu-tab">
+      <div class="menu-tab-items">
+        <a href="/user">
+          <i class="far fa-user"></i>
+        </a>
+      </div>
+      <div class="menu-tab-items">
+        <a href="/">
+          <i class="fas fa-home"></i>
+        </a>
+      </div>
+      <div class="menu-tab-items">
+        <a href="/submit">
+          <i class="far fa-edit"></i>
+        </a>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+:root {
+  --main-blue: #0b8cbc;
+  --grey-blue: #374955;
+  --light-grey: #9baebc;
+  --orange: #ec9929;
+  --white: #ecfcff;
+
+  --small: 14px;
+  --medium: 18px;
+  --large: 24px;
+  --x-large: 34px;
+}
+
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pridi&display=swap");
