@@ -99,18 +99,9 @@ form {
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow, 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  /* transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow, 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12); */
   padding: 10px 20px 5px;
-}
-
-.card p {
-  margin: 0 auto;
-  font-size: var(--small);
-}
-
-.card hr {
-  margin-bottom: 2px;
 }
 
 .card small {
@@ -136,23 +127,43 @@ form {
   /* background-size: 80px; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .card-text {
   width: 100%;
+  font-size: var(--medium);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-text p {
+  min-width: 90%;
+  margin: auto;
+}
+
+.likes-count {
+  font-size: var(--small);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .card-likes {
+  margin: auto;
+}
+
+.card-likes-btn {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   width: 100%;
+  justify-content: space-between;
 }
 
 @media (max-width: 990px) {
   .card {
-    margin: 20px;
+    margin-bottom: 30px;
   }
 }
 
