@@ -165,9 +165,6 @@ app.post("/login", (req, res) => {
     if (err) {
       console.log(err);
       res.redirect("/login");
-    } else if (!user) {
-      console.log("something");
-      done(null, null);
     } else {
       console.log("ready to auth");
       passport.authenticate("local", {
