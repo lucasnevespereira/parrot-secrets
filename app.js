@@ -169,6 +169,7 @@ app.post("/login", (req, res) => {
       console.log("something");
       done(null, null);
     } else {
+      console.log("ready to auth");
       passport.authenticate("local", {
         successRedirect: "/secrets",
         failureRedirect: "/login"
