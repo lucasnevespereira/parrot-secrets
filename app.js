@@ -159,7 +159,7 @@ app.get("/login", function(req, res) {
   res.render("login", { isErr: false });
 });
 
-app.get("/error", (req, res) => {
+app.get("/loginerror", (req, res) => {
   res.render("login", { isErr: true });
 });
 
@@ -177,7 +177,7 @@ app.post("/login", (req, res) => {
       console.log("ready to auth");
       passport.authenticate("local", {
         successRedirect: "/secrets",
-        failureRedirect: "/error",
+        failureRedirect: "/loginerror",
         failureFlash: true
       })(req, res, function() {
         res.redirect("/secrets");
