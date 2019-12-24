@@ -1,5 +1,3 @@
-console.log("working");
-
 function getDark() {
   getComputedStyle(document.documentElement).getPropertyValue("--main-blue"); // #999999
 

@@ -9,6 +9,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const flash = require("connect-flash");
 
 const app = express();
 
@@ -34,6 +35,9 @@ app.use(
 app.use(passport.initialize());
 // Allowing passport to manage our session
 app.use(passport.session());
+
+// Set app the option of using flash messages
+app.use(flash());
 
 //Mongoose Connection
 mongoose.connect(
@@ -152,6 +156,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
+  console.log(req.flash("error"));
   res.render("login", { isErr: false });
 });
 
@@ -164,12 +169,12 @@ app.post("/login", (req, res) => {
   req.login(user, function(err) {
     if (err) {
       console.log(err);
-      res.redirect("/signup");
+      res.redirect("/login");
     } else {
       console.log("ready to auth");
       passport.authenticate("local", {
         successRedirect: "/secrets",
-        failureRedirect: "/",
+        failureRedirect: "/login",
         failureFlash: true
       })(req, res, function() {
         res.redirect("/secrets");
