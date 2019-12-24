@@ -156,8 +156,11 @@ app.get("/", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-  console.log(req.flash("error"));
-  res.render("login", { isErr: false });
+  res.render("login");
+});
+
+app.get("/loginerror", (req, res) => {
+  res.render("login", { isErr: true });
 });
 
 app.post("/login", (req, res) => {
@@ -174,7 +177,7 @@ app.post("/login", (req, res) => {
       console.log("ready to auth");
       passport.authenticate("local", {
         successRedirect: "/secrets",
-        failureRedirect: "/login",
+        failureRedirect: "/loginerror",
         failureFlash: true
       })(req, res, function() {
         res.redirect("/secrets");
