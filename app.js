@@ -164,12 +164,13 @@ app.post("/login", (req, res) => {
   req.login(user, function(err) {
     if (err) {
       console.log(err);
-      res.redirect("/login");
+      res.redirect("/signup");
     } else {
       console.log("ready to auth");
       passport.authenticate("local", {
         successRedirect: "/secrets",
-        failureRedirect: "/login"
+        failureRedirect: "/",
+        failureFlash: true
       })(req, res, function() {
         res.redirect("/secrets");
       });
