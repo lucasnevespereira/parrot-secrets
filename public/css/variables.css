@@ -3,7 +3,6 @@
   --grey-blue: #374955;
   --light-grey: #9baebc;
   --sec-orange: #ff9100;
-  --white: #ecfcff;
 
   --sec-blue: rgb(89, 60, 212);
 
@@ -12,7 +11,7 @@
 
   --blue: #3155a1;
   /* --blue: #4328b5; */
-  --white: #ffffff;
+  --white: #f3f3f3f3;
   --orange: #f44b24;
   --yellow: #fdd644;
 
@@ -25,15 +24,6 @@
 }
 
 /* FONTS */
-
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Carter+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Pridi&display=swap");
-/* 
-// Montserrat
-// Lora
-
-//Hind Madurai */
 
 @import url("https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat&display=swap");
 
