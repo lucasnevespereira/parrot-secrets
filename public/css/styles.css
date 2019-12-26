@@ -163,6 +163,7 @@ form {
   padding-top: 100px;
   background: var(--white);
   height: 90vh;
+  margin-bottom: 50px;
 }
 
 .secrets-title {
