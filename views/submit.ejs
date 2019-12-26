@@ -2,7 +2,8 @@
 
 <div class="header">
   <div class="short-logo">
-    <img src="img/simple-logo.png" alt="logo" />
+    <img src="img/short_logo.png" alt="logo" />
+    <p class="header-title">Submit Page</p>
   </div>
   <div class="menu">
     <div class="label-menu">
@@ -22,27 +23,28 @@
         </a>
       </div>
     </div>
-    <div class="btn btn-outline-danger my-2 my-sm-0 log-btn">
-      <a class="text-danger text-decoration-none" href="/logout">Logout</a>
+    <div class="btn btn-danger my-2 my-sm-0 logout-btn ">
+      <a class="text-light text-decoration-none" href="/logout">Logout</a>
     </div>
   </div>
 </div>
 <div class="separator"></div>
 
-  <div class="submit-secrets">
-    <h3>Submit Secrets</h3>
+<div class="submit-secrets">
+  <h3>Hello <%=user%></h3>
 
 
-    <form action="/submit" method="POST" class="container-fluid col-lg-6">
+  <div class="submit-row">
+  <form action="/submit" method="POST" class="container-fluid col-lg-6">
 
-        <div class="form-group mt-5">
-          <!-- <input type="text" class="form-control text-center" name="secret" placeholder="What's your secret <%=user%> ?"> -->
-          <textarea name="secret" class="form-control text-center" placeholder="What's your secret <%=user%> ?"cols="30" rows="5"></textarea>
-        </div>
-        <button type="submit" class=" button-wide btn btn-dark">Share it to the Parrots Wall</button>
-      </form>
-  
+      <div class="form-group mt-5">
+        <textarea name="secret" class="form-control text-center" placeholder="What's your secret ?"cols="30" rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn-dark btn text-light">Share it to the Parrots Wall</button>
+    </form>
   </div>
+
+</div>
 
 
 

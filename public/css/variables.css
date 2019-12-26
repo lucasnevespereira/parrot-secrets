@@ -2,13 +2,26 @@
   --main-blue: #0b8cbc;
   --grey-blue: #374955;
   --light-grey: #9baebc;
-  --orange: #ec9929;
+  --sec-orange: #ff9100;
   --white: #ecfcff;
+
+  --sec-blue: rgb(89, 60, 212);
+
+  --rgba-dark: rgba(0, 0, 0, 0.5);
+  --rgba-blue: rgba(89, 60, 212, 0.5);
+
+  --blue: #3155a1;
+  /* --blue: #4328b5; */
+  --white: #ffffff;
+  --orange: #f44b24;
+  --yellow: #fdd644;
 
   --small: 14px;
   --medium: 18px;
   --large: 24px;
   --x-large: 34px;
+
+  --bottom-left: 0% 100% 0% 100% / 54% 0% 100% 46%;
 }
 
 /* FONTS */
@@ -16,3 +29,18 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Carter+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Pridi&display=swap");
+/* 
+// Montserrat
+// Lora
+
+//Hind Madurai */
+
+@import url("https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat&display=swap");
+
+/*
+ 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Hind Madurai', sans-serif; 
+
+*/

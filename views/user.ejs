@@ -2,7 +2,8 @@
 
 <div class="header">
   <div class="short-logo">
-    <img src="img/simple-logo.png" alt="logo" />
+    <img src="img/short_logo.png" alt="logo" />
+    <p class="header-title">My Account</p>
   </div>
   <div class="menu">
     <div class="label-menu">
@@ -22,39 +23,39 @@
         </a>
       </div>
     </div>
-    <div class="btn btn-outline-danger my-2 my-sm-0 log-btn">
-      <a class="text-danger text-decoration-none" href="/logout">Logout</a>
+    <div class="btn btn-danger my-2 my-sm-0 logout-btn ">
+      <a class="text-light text-decoration-none" href="/logout">Logout</a>
     </div>
   </div>
 </div>
 <div class="separator"></div>
 
-<div class="user-secrets">
+<div class="user-secrets container-fluid  mx-auto">
   <h3><%=user%>'s Secrets</h3>
 
   <hr />
 
-  <div class="mysecrets">
-    <div class="row">
+
       <% if(showMySecrets.length != 0){%>
       <% showMySecrets.forEach(secret => { %>
-      <div class="col-md-8 col-lg-6 mx-auto">
-        <div class="card my-card">
+      <div class="row user-row">
+        <div class="col-md-8 col-lg-6 mx-auto user-card">
+          <div class="user-card-item">
           <p><%=secret.content%></p>
           <a href="javascript:if(confirm('Are you sure you want to delete your secret ?')){document.location.href='/delete/<%=secret._id%>';}">
             <i class="far fa-trash-alt"></i>
           </a>
+          </div>
         </div>
       </div>
         <%}); } else { %>
           <p class="mx-auto">You have no secrets yet</p>
           <% };%>
-    </div>
-  </div>
+
 
       <hr />
 
-      <div class="btn button-wide btn-danger my-2 ">
+      <div class="btn delete-btn btn-danger my-2 ">
         <a
           class="text-light text-decoration-none"
           href="javascript:if(confirm('Are you sure you want to delete your account ?')){document.location.href='/user/<%=userId%>';}"

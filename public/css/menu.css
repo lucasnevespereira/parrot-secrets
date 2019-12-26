@@ -1,8 +1,9 @@
 @import "variables.css";
 
 .menu-tab {
+  /* border-radius: 0% 100% 0% 100% / 100% 0% 100% 25%; */
   height: 7vh;
-  background: var(--grey-blue);
+  background: var(--blue);
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -18,7 +19,6 @@
 }
 
 .menu-tab-items {
-  border: 1px solid white;
   width: calc(100% / 3);
   display: flex;
   justify-content: center;
@@ -35,12 +35,12 @@
 }
 
 .label-menu a {
-  color: var(--grey-blue);
+  color: var(--blue);
   text-decoration: none;
 }
 
 .label-menu a:hover {
-  color: var(--main-blue);
+  color: var(--sec-orange);
   transform: scale(1.1);
 }
 

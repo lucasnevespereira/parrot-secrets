@@ -1,21 +1,32 @@
 <%- include('partials/header') %>
-
 <div class="logo">
-  <img src="img/parrot_Secrets.png" alt="logo" />
+  <img src="img/short_logo.png" alt="" />
+  <h2>Parrot Secrets</h2>
 </div>
 <div class="container-fluid col-md-6 col-lg-4">
   <form action="/register" method="POST">
     <div class="form-group">
-    <div class="form-group">
-      <input type="text" class="form-control" name="username" placeholder="Enter a Username"/>
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        placeholder="Username"
+      />
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" name="password" placeholder="Enter a Password" />
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        placeholder="Password"
+      />
     </div>
     <div class="form-btn">
-    <button type="submit" class="button-wide btn btn-dark btn-wide">Signup</button>
+      <button type="submit" class="login-btn btn btn-dark btn-wide">
+        Signup
+      </button>
       <a
-        class="btn btn-block btn-social btn-facebook text-center"
+        class="social-btn btn btn-block btn-social btn-facebook text-center"
         href="/auth/facebook"
         role="button"
       >
@@ -23,12 +34,11 @@
         Signup with Facebook
       </a>
     </div>
-    <div class="link-btn text-center mt-2">
+    <div class="link-btn mt-2 text-center">
       <a class="btn btn-link" href="/login">
         Already have an account? Log In
       </a>
     </div>
-
     <% if(error != "") { %>
     <div class="alert alert-danger mt-3 text-center" role="alert">
       <%= error %>
