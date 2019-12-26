@@ -13,7 +13,7 @@ a {
 }
 
 .separator {
-  margin-bottom: 55px;
+  margin-bottom: 100px;
   width: 100%;
   height: 1px;
 }
@@ -80,22 +80,13 @@ h3 {
 }
 
 .login-btn {
-  border-radius: 15px;
   border: none;
   background: var(--sec-orange);
 }
 
 .login-btn-blue {
-  border-radius: 15px;
+  border: none;
   background: var(--blue);
-}
-
-.logout-btn {
-  border-radius: 15px;
-}
-
-.social-btn {
-  border-radius: 15px;
 }
 
 .logo {
