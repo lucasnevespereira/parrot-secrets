@@ -225,6 +225,14 @@ form {
   border: none;
 }
 
+.likeicon:hover {
+  cursor: pointer;
+}
+
+.heart-filled {
+  color: var(--blue);
+}
+
 /* SUBMIT PAGE */
 .submit-secrets {
   margin: auto;

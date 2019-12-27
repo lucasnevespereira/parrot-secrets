@@ -224,39 +224,36 @@ app.get("/secrets", function(req, res) {
   }
 });
 
-app.post("/secrets", (req, res) => {
-  let cardId = req.body.cardId;
-  let dislikeBtn = req.body.dislikeBtn;
-  let likeBtn = req.body.likeBtn;
+// Like/Dislike page Secrets
+app.post("/secrets/:secretId", function(req, res) {
+  let secretID = req.params.secretId;
+  let userID = req.user.id;
 
-  if (likeBtn) {
-    Secret.findByIdAndUpdate(
-      cardId,
-      { $inc: { likes_count: 1 } },
-      { new: true },
-      (err, updatedLike) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.redirect("/secrets");
-        }
+  Secret.findById(secretID, function(err, theSecret) {
+    if (err) {
+      console.log(err);
+    } else {
+      let userThatLiked = theSecret.userThatLiked;
+      console.log(userThatLiked);
+
+      console.log(userThatLiked.indexOf(userID));
+
+      if (userThatLiked.indexOf(userID) != -1) {
+        console.log("User already liked this secret");
+        userThatLiked.pop(userID);
+        theSecret.likes_count -= 1;
+        theSecret.save();
+        console.log(theSecret.likes_count);
+        res.send({ likeCount: theSecret.likes_count });
+      } else {
+        userThatLiked.push(userID);
+        theSecret.likes_count += 1;
+        theSecret.save();
+        console.log(theSecret.likes_count);
+        res.send({ likeCount: theSecret.likes_count });
       }
-    );
-  } else if (dislikeBtn) {
-    Secret.findByIdAndUpdate(
-      cardId,
-      { $inc: { likes_count: -1 } },
-      { new: true },
-      (err, updatedLike) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(updatedLike);
-          res.redirect("/secrets");
-        }
-      }
-    );
-  }
+    }
+  });
 });
 
 // Submit Page
