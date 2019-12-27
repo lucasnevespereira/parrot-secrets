@@ -60,7 +60,8 @@ const userSchema = new mongoose.Schema({
 const secretSchema = new mongoose.Schema({
   user: String,
   content: String,
-  likes_count: Number
+  likes_count: Number,
+  userThatLiked: [String]
 });
 
 // Add plugins to User Schema
