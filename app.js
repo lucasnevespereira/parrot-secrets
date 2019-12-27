@@ -234,10 +234,6 @@ app.post("/secrets/:secretId", function(req, res) {
       console.log(err);
     } else {
       let userThatLiked = theSecret.userThatLiked;
-      console.log(userThatLiked);
-
-      console.log(userThatLiked.indexOf(userID));
-
       if (userThatLiked.indexOf(userID) != -1) {
         console.log("User already liked this secret");
         userThatLiked.pop(userID);
