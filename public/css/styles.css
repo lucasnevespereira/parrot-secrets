@@ -36,10 +36,6 @@ h3 {
   font-family: "Lora", serif;
 }
 
-input {
-  min-height: 60px;
-}
-
 .col-lg-6 {
   position: unset;
 }
