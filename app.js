@@ -226,32 +226,32 @@ app.get("/secrets", function(req, res) {
 });
 
 // Like/Dislike page Secrets
-app.post("/secrets/:secretId", function(req, res) {
-  let secretID = req.params.secretId;
-  let userID = req.user.id;
+// app.post("/secrets/:secretId", function(req, res) {
+//   let secretID = req.params.secretId;
+//   let userID = req.user.id;
 
-  Secret.findById(secretID, function(err, theSecret) {
-    if (err) {
-      console.log(err);
-    } else {
-      let userThatLiked = theSecret.userThatLiked;
-      if (userThatLiked.indexOf(userID) != -1) {
-        console.log("User already liked this secret");
-        userThatLiked.pop(userID);
-        theSecret.likes_count -= 1;
-        theSecret.save();
-        console.log(theSecret.likes_count);
-        res.send({ likeCount: theSecret.likes_count });
-      } else {
-        userThatLiked.push(userID);
-        theSecret.likes_count += 1;
-        theSecret.save();
-        console.log(theSecret.likes_count);
-        res.send({ likeCount: theSecret.likes_count });
-      }
-    }
-  });
-});
+//   Secret.findById(secretID, function(err, theSecret) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       let userThatLiked = theSecret.userThatLiked;
+//       if (userThatLiked.indexOf(userID) != -1) {
+//         console.log("User already liked this secret");
+//         userThatLiked.pop(userID);
+//         theSecret.likes_count -= 1;
+//         theSecret.save();
+//         console.log(theSecret.likes_count);
+//         res.send({ likeCount: theSecret.likes_count });
+//       } else {
+//         userThatLiked.push(userID);
+//         theSecret.likes_count += 1;
+//         theSecret.save();
+//         console.log(theSecret.likes_count);
+//         res.send({ likeCount: theSecret.likes_count });
+//       }
+//     }
+//   });
+// });
 
 // Submit Page
 app.get("/submit", function(req, res) {
